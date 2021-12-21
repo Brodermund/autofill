@@ -1,5 +1,4 @@
 let scans = Number(document.querySelector("#manfiest-history-log > table").rows.length) - 2
-console.log(scans)
 let orderArr =[]
 let weightCount= 0
 let pcCount = 0
@@ -25,25 +24,22 @@ for (let i = 0; i < scans; i++) {
         continue
     }
 }
-console.log("break")
-let input = document.querySelector("body > table:nth-child(24) > tbody > tr:nth-child(2) > td:nth-child(1)").innerText
-console.log(input)
+let input = document.querySelector("body > table:nth-child(25) > tbody > tr:nth-child(2) > td:nth-child(1)").innerText
 let inputArr = String(input).split('\n')
 let numOrders = Number(inputArr[1])
-console.log(numOrders)
 let orderNumArr = []
 let exportArr = []
 for (let i = 0; i < numOrders; i++) {
     let index = (i*5)+2
     console.log(i)
-    let orderNum = document.querySelector(`body > table:nth-child(27) > tbody > tr:nth-child(${index}) > td:nth-child(3) > p > font > strong > a`).innerText
-    let pcwtArr =  getWeight(document.querySelector(`body > table:nth-child(27) > tbody > tr:nth-child(${index}) > td:nth-child(2)`).innerHTML)
+    let orderNum = document.querySelector(`body > table:nth-child(28) > tbody > tr:nth-child(${index}) > td:nth-child(3) > p > font > strong > a`).innerText
+    let pcwtArr =  getWeight(document.querySelector(`body > table:nth-child(28) > tbody > tr:nth-child(${index}) > td:nth-child(2)`).innerHTML)
     let weight = pcwtArr[1]
     let pcs = pcwtArr[0]
     if(orderArr.indexOf(orderNum) !== -1){
         weightCount = Number(weightCount) + Number(weight)
         pcCount = Number(pcCount) + Number(pcs)
-        document.querySelector(`body > table:nth-child(27) > tbody > tr:nth-child(${index}) > td:nth-child(5) > div > input`).click()
+        document.querySelector(`body > table:nth-child(28) > tbody > tr:nth-child(${index}) > td:nth-child(5) > div > input`).click()
     } else{
         continue
     }
@@ -54,7 +50,7 @@ window.alert(`Pieces:${pcCount}\rWeight:${weightCount.toFixed(0)}`)
 let print = window.confirm("Print Loaded Orders?")
 if (print == true) {
     document.querySelector("#num_bol_needed").value = 1
-    document.querySelector("body > div:nth-child(9) > a").click()
+    document.querySelector("body > div:nth-child(10) > a").click()
   }
 
 function getWeight(str){

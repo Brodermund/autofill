@@ -15,7 +15,6 @@ let rawCleanManifest = splitManifest[0]
 let splitCleanManifest = rawCleanManifest.split(" ")
 let finalManifest = splitCleanManifest[2]
 let input = document.querySelector("body > table:nth-child(24) > tbody > tr:nth-child(2) > td:nth-child(1)").innerText
-console.log(input)
 let inputArr = String(input).split('\n')
 let numOrders = Number(inputArr[1])
 console.log(numOrders)
