@@ -1,0 +1,1 @@
+document.querySelector("body > form > table > tbody > tr:nth-child(7) > td > select")
